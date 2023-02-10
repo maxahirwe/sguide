@@ -20,4 +20,5 @@ WORKDIR /app
 COPY --from=builder /usr/local/bundle/ /usr/local/bundle/
 COPY . ./
 EXPOSE 3000
+ENV [OPEN_KEY]=[default-value]
 CMD ["rails", "server", "-b", "0.0.0.0"]
