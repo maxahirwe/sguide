@@ -1,0 +1,14 @@
+version: "3.3"
+services:
+    app:
+      image: sguide
+      environment:
+        POSTGRES_USER: postgres
+        POSTGRES_PASSWD: example
+        POSTGRES_HOST: db
+      ports:
+        - 3000:3000
+    db:
+      image: postgres:alpine3.15
+      environment:
+        POSTGRES_PASSWORD: example
