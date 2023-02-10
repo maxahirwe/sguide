@@ -25,6 +25,8 @@ Things you may want to cover:
 
 # steps
 
+https://earthly.dev/blog/rails-with-docker/
+
 npm install --global yarn
 rails webpacker:install
 docker build -t sguide .
