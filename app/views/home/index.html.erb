@@ -1,20 +1,19 @@
 <div class="container mt-5">
-  <h1 class="text-center mb-5 text-white">Programming Prompt Generator</h1>
   <div class="row justify-content-center">
     <div class="col-md-8">
       <div class="card bg-dark shadow-sm">
         <div class="card-body">
-          <%= form_with model: @prompt, url: 'prompts_path', method: :post do |form| %>
+          <%= form_with model: @promp, url: 'prompts_path', method: :post do |form| %>
             <div class="form-group">
               <%= form.label :language, class: "font-weight-bold text-white" %>
-              <%= form.select :language, options_for_select(["Ruby", "JavaScript", "Python", "C++"], selected: '@prompt.language'), {class: "form-control"} %>
+              <%= form.select :language, options_for_select(["Ruby", "JavaScript", "Python", "C++"], selected: '@prompt.language'), {class: "custom-select"} %>
             </div>
             <div class="form-group">
               <%= form.label :prompt, class: "font-weight-bold text-white" %>
               <%= form.text_area :prompt, rows: "5", class: "form-control" %>
             </div>
-            <div class="form-group text-center">
-              <%= form.submit "Generate", {class: "btn btn-primary"} %>
+            <div class="form-group text-center mt-4">
+              <%= form.submit "Generate", {class: "btn btn-primary btn-lg"} %>
             </div>
           <% end %>
         </div>
@@ -25,25 +24,24 @@
     <div class="col-md-8">
       <div class="card bg-light shadow-sm">
         <div class="card-body">
-          <h3 class="text-center font-weight-bold mb-5">Generated Prompts</h3>
+          <h5 class="text-center font-weight-bold mb-5">Generated Prompts</h5>
           <div id="prompt-responses" class="overflow-auto" style="max-height: 500px;">
-            <div class="card bg-white shadow-sm mb-3">
-              <div class="card-body">
-                <h5 class="card-title font-weight-bold">Prompt Message</h5>
-                <p class="card-text">Write a program that outputs the sum of two numbers.</p>
-                <p class="card-text"><small class="text-muted">Sent at: 10:00am, February 10, 2023</small></p>
+            <h6 class="text-center font-weight-bold mb-3">Total Prompts: <%= @prompts.count %></h6>
+            <% @prompts.each do |prompt| %>
+              <div class="card bg-white shadow-sm mb-3">
+                <div class="card-body">
+                  <h5 class="card-title font-weight-bold">Prompt Message</h5>
+                  <p class="card-text"><%= prompt[:prompt] %></p>
+                  <p class="card-text"><small class="text-muted">Sent at: <%= prompt[:created_at] %></small></p>
+                </div>
+                <div class="card-footer">
+                  <h5 class="font-weight-bold">Response from OpenAI:</h5>
+                  <pre class="bg-dark p-3 text-white rounded">
+<%= prompt[:response] %>
+                  </pre>
+                </div>
               </div>
-              <div class="card-footer">
-                <h5 class="font-weight-bold">Response from OpenAI:</h5>
-                <p>The following is an example of how to solve this prompt in Python:</p>
-                <pre class="bg-light p-3">
-def add_numbers(a, b):
-  return a + b
-
-print(add_numbers(1, 2)) # Output: 3
-                </pre>
-              </div>
-            </div>
+            <% end %>
           </div>
         </div>
       </div>
