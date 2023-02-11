@@ -2,7 +2,7 @@
 
 ## Description
 
-Title: "Study Buddy - A Personal Study Assistant"
+Title: "Study Guide - A Personal Ai-Assisted Study Assistant"
 
 Objective: To create a web application that uses the OpenAI API to provide students with a personal study assistant that can answer their questions and provide additional resources to help them study more effectively.
 
@@ -26,7 +26,7 @@ Personalized Feedback: The application will provide personalized feedback to stu
 
 ### How it Works:
 
-The student visits the "Study Buddy" website and logs in.
+The student visits the "Study Guide(Sguide)" website and logs in.
 The student asks a question or requests a resource.
 The web application sends the student's request to the OpenAI API for processing.
 The OpenAI API returns the answer or resource to the web application.

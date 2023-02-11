@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  lanugage: MyString
+  prompt: MyString
+  string: MyString
+  createdBy: 1
+
+two:
+  lanugage: MyString
+  prompt: MyString
+  string: MyString
+  createdBy: 1
