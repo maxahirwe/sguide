@@ -21,8 +21,11 @@ Personalized Feedback: The application will provide personalized feedback to stu
 ### Technologies Used:
 
 -   OpenAI API
--   Ruby on Rails 6 (for building the web application)
+-   Ruby on Rails 6
 -   ERB HTML, CSS, and JavaScript (front-end development)
+-   Ruby version 2.7
+-   Database: Production:SQLITE | Production:POSTGRSQL
+-   Docker
 
 ### How it Works:
 
@@ -32,11 +35,6 @@ The web application sends the student's request to the OpenAI API for processing
 The OpenAI API returns the answer or resource to the web application.
 The web application displays the answer or resource to the student.
 This web application provides students with a convenient and effective way to study and improve their grades. By leveraging the power of the OpenAI API, the application can provide personalized and accurate answers and resources in real-time, helping students achieve their academic goals.
-
-### Tech
-
--   Ruby version 2.7
--   Database: Sqlite dev | staging POSTGRSQL Production
 
 ## Installation steps
 
