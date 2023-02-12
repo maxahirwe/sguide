@@ -15,10 +15,12 @@
  */
 .title {
   padding: 10px 0;
+
   position: relative;
 }
 
 .text-ai {
+  font-size:2rem;
   color: #00b0ff;
   animation: shining 1s infinite;
 }

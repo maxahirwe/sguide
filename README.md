@@ -43,7 +43,7 @@ This web application provides students with a convenient and effective way to st
     - install [docker](https://docs.docker.com/engine/)
     - install docker [compose plugin] (https://docs.docker.com/compose/install/linux/)
 
-### local
+### Local
 
 if you want to run in local environment
 
@@ -53,7 +53,7 @@ if you want to run in local environment
 	rails webpacker:install (if necessary)
 ```
 
-### docker/deployment
+### Docker/deployment
 
 ```
 	docker build -t sguide .
