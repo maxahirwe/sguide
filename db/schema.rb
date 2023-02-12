@@ -12,11 +12,24 @@
 
 ActiveRecord::Schema.define(version: 2023_02_11_012327) do
 
+  create_table "open_api_responses", force: :cascade do |t|
+    t.text "content"
+    t.text "raw"
+    t.string "model", null: false
+    t.integer "prompt_tokens", null: false
+    t.integer "completion_tokens", null: false
+    t.integer "total_tokens", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.integer "prompts_id"
+    t.index ["prompts_id"], name: "index_open_api_responses_on_prompts_id"
+  end
+
   create_table "prompts", force: :cascade do |t|
     t.integer "user_id"
     t.string "language", null: false
     t.text "prompt", null: false
-    t.text "prompt_raw", null: false
+    t.text "prompt_raw"
     t.string "endpoint", null: false
     t.datetime "request_time"
     t.datetime "response_time"
@@ -24,18 +37,5 @@ ActiveRecord::Schema.define(version: 2023_02_11_012327) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "responses", force: :cascade do |t|
-    t.text "content"
-    t.text "raw"
-    t.string "model"
-    t.integer "prompt_tokens"
-    t.integer "completion_tokens"
-    t.integer "total_tokens"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.integer "prompts_id"
-    t.index ["prompts_id"], name: "index_responses_on_prompts_id"
-  end
-
-  add_foreign_key "responses", "prompts", column: "prompts_id"
+  add_foreign_key "open_api_responses", "prompts", column: "prompts_id"
 end

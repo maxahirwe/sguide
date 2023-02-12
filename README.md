@@ -22,7 +22,7 @@ Personalized Feedback: The application will provide personalized feedback to stu
 
 -   OpenAI API
 -   Ruby on Rails 6 (for building the web application)
--   ERB HTML, CSS, and JavaScript (for front-end development)
+-   ERB HTML, CSS, and JavaScript (front-end development)
 
 ### How it Works:
 
@@ -36,13 +36,27 @@ This web application provides students with a convenient and effective way to st
 ### Tech
 
 -   Ruby version 2.7
+-   Database: Sqlite dev | staging POSTGRSQL Production
 
--   Database POSTGRSQL
+## Installation steps
 
-# Installation steps
+    - install [docker](https://docs.docker.com/engine/)
+    - install docker [compose plugin] (https://docs.docker.com/compose/install/linux/)
+
+### local
 
 if you want to run in local environment
-npm install --global yarn
-rails webpacker:install
-docker build -t sguide .
-docker-compose up
+
+```
+	npm install --global yarn (if necessary)
+	bundle install
+	rails webpacker:install (if necessary)
+```
+
+### docker/deployment
+
+```
+	docker build -t sguide .
+	docker-compose up
+	visit http://localhost:3000/
+```
