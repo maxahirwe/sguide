@@ -45,25 +45,25 @@ This web application provides students with a convenient and effective way to st
 ### Local
 
 ```
-	npm install --global yarn (if necessary)
-	npm install
-	bundle install
-	rails webpacker:install (if necessary)
+npm install --global yarn (if necessary)
+npm install
+bundle install
+rails webpacker:install (if necessary)
 ```
 
 if you want to run in local environment
 
 ```
-	rails db:migrate
-	rails s
+rails db:migrate
+rails s
 ```
 
 ### Docker/Deployment
 
 ```
-	docker build -t sguide .
-	docker-compose up
-	visit http://localhost:3000/
+docker build -t sguide .
+docker-compose up
+visit http://localhost:3000/
 ```
 
 ### Sample Screenshots
