@@ -7,4 +7,4 @@
 # GMAIL_USERNAME: 'Your_Gmail_Username'
 # makes 'Your_Gmail_Username' available as ENV["GMAIL_USERNAME"]
 OPEN_API_ENDPOINT: 'https://api.openai.com/v1/completions'
-OPEN_API_KEY: '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'
+OPEN_API_KEY: 'KEY'
