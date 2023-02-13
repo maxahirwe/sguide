@@ -40,6 +40,7 @@ This web application provides students with a convenient and effective way to st
 
     - install [docker](https://docs.docker.com/engine/)
     - install docker [compose plugin] (https://docs.docker.com/compose/install/linux/)
+    - CONFIGURE  "/config/local_env.yml" =>  REPLACE 'KEY' WITH PROVIDED API KEY
 
 ### Local
 
