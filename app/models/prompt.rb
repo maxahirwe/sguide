@@ -4,7 +4,7 @@ class Prompt < ApplicationRecord
   OPEN_API_KEY = "Bearer #{ENV['OPEN_API_KEY']}".freeze
   OPEN_API_MODEL = 'code-cushman-001'.freeze
   OPEN_API_MODEL_TEMPERATURE = 0
-  OPEN_API_MODEL_TOKEN_LIMIT = 50
+  OPEN_API_MODEL_TOKEN_LIMIT = 150
   has_many :open_api_responses, foreign_key: 'prompts_id'
   validates :prompt, length: { minimum: 2, maximum: 140 }, presence: true
   validates :language, :user_id, presence: true

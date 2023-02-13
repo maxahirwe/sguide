@@ -4,10 +4,9 @@
     <%= form.select :language, options_for_select(languages, selected: languages.second), {class: "custom-select"} %>
   </div>
   <div class="form-group">
-    <%= form.label :prompt, class: "font-weight-bold text-white" %>
-    <%= form.text_area :prompt, placeholder: "write here\n example: function that generates prime numbers", rows: "2 ", class: "form-control" %>
+    <%= form.text_area :prompt, placeholder: "write here\n example: function that generates prime numbers", rows: "2 ", class: "form-control mt-2" %>
   </div>
-  <div class="form-group text-center mt-4">
-    <%= form.submit "Generate", {class: "btn btn-primary btn-md"} %>
+  <div class="form-group text-center mt-2">
+    <%= form.submit "Generate", {class: "btn btn-primary btn-sm"} %>
   </div>
 <% end %>

@@ -2,7 +2,7 @@
 
 ## Description
 
-Title: "Study Guide - A Personal Ai-Assisted Study Assistant"
+Sguide: "Study Guide - A Personal AI-Assisted Study Assistant"
 
 Objective: To create a web application that uses the OpenAI API to provide students with a personal study assistant that can answer their questions and provide additional resources to help them study more effectively.
 
@@ -22,9 +22,9 @@ Personalized Feedback: The application will provide personalized feedback to stu
 
 -   OpenAI API
 -   Ruby on Rails 6
--   ERB HTML, CSS, and JavaScript (front-end development)
 -   Ruby version 2.7
--   Database: Production:SQLITE | Production:POSTGRSQL
+-   ERB HTML, CSS, and JavaScript (front-end development)
+-   Database: Development:sqlite | Production:postgresql
 -   Docker
 
 ### How it Works:
@@ -43,18 +43,34 @@ This web application provides students with a convenient and effective way to st
 
 ### Local
 
-if you want to run in local environment
-
 ```
 	npm install --global yarn (if necessary)
+	npm install
 	bundle install
 	rails webpacker:install (if necessary)
 ```
 
-### Docker/deployment
+if you want to run in local environment
+
+```
+	rails db:migrate
+	rails s
+```
+
+### Docker/Deployment
 
 ```
 	docker build -t sguide .
 	docker-compose up
 	visit http://localhost:3000/
 ```
+
+### Sample Screenshots
+
+-   ![Screenshot1.png](/documentation/screenshots/screenshot1.png)
+-   ![Screenshot2.png](/documentation/screenshots/screenshot2.png)
+-   ![sguide.png](/documentation/screenshots/sguide.gif)
+
+## Author
+
+[@maxahirwe](https://max.rw)

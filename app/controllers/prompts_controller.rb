@@ -5,14 +5,15 @@ class PromptsController < ApplicationController
   # GET /prompts or /prompts.json
   def index
     @supported_languages = ['Ruby', 'JavaScript', 'Python', 'C++']
-    @prompts = Prompt.last(20).reverse
+    @prompts = Prompt.includes(:open_api_responses).last(20).reverse
     @prompts_count = Prompt.count
     @prompt = Prompt.new
-    # @prompts = Prompt.all
   end
 
   # GET /prompts/1 or /prompts/1.json
-  def show; end
+  def show; 
+    render json: @prompt 
+  end
 
   # POST /prompts or /prompts.json
   def create
@@ -21,7 +22,7 @@ class PromptsController < ApplicationController
     respond_to do |format|
       if @prompt.save
         @prompt.process_openapi_response
-        format.js { render :create, locals: { prompt: @prompt } }
+        format.js { render :create, locals: { prompt: @prompt, pcount:Prompt.count } }
       else
         format.js { render :error }
       end
