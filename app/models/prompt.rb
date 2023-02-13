@@ -12,6 +12,12 @@ class Prompt < ApplicationRecord
 
   private
 
+  def check_keys
+    if ENV['OPEN_API_KEY'] === 'KEY'
+      raise 'Please first configure OPEN_API_KEY provided in (/config/local_env.yml)'
+    end
+  end
+
   def process_prompt
     prompt = formulate_prompt
     self.prompt_raw = prompt.to_s
@@ -19,7 +25,8 @@ class Prompt < ApplicationRecord
     self.endpoint = OPEN_API_ENDPOINT
   end
 
-  def formulate_prompt
+  def formulate_prompt     
+    check_keys
     {
       model: OPEN_API_MODEL,
       prompt: "#{prompt}. strictly in (#{language}) programming language",
@@ -49,7 +56,7 @@ class Prompt < ApplicationRecord
   def process_openapi_response
     headers = { 'Content-Type' => 'application/json', Authorization: OPEN_API_KEY }
     response = HTTParty.post(OPEN_API_ENDPOINT, body: formulate_prompt.to_json, headers: headers)
-    self.request_time = DateTime.now
+    self.response_time = DateTime.now
     save
     create_response(response.parsed_response)
   end
