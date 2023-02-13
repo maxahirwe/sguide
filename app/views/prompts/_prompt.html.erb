@@ -1,0 +1,14 @@
+<div class="card bg-white shadow-sm mb-3">
+  <div class="card-body">
+    <h6 class="card-title font-weight-bold"></h6>
+    <small>Prompt(<%= prompt.language%>)</small>
+    <p class="card-text"><%= prompt.prompt %></p>
+    <p class="card-text"><small class="text-muted">Sent: <%= prompt.created_at.strftime("%Y-%m-%d at %I:%M") %> (<%= time_ago_in_words prompt.created_at %> ago)</small></p>
+  </div>
+  <div class="card-footer">
+    <h6 class="font-weight-bold">Response from OpenAI:</h6>
+    <pre class="bg-dark p-3 text-white rounded">
+     <%= prompt.open_api_responses.first ?  prompt.open_api_responses.first.content : '-'%>
+    </pre>
+  </div>
+</div>

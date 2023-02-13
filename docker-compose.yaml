@@ -8,7 +8,10 @@ services:
         POSTGRES_HOST: db
       ports:
         - 3000:3000
+      entrypoint: ["bin/entry.sh"]
+      command:
+       rails s -b 0.0.0.0
     db:
-      image: postgres:alpine3.15
+      image: postgres:alpine3.15 #intended for production use
       environment:
         POSTGRES_PASSWORD: example

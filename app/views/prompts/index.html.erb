@@ -1,0 +1,13 @@
+<div class="container mt-2">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <div class="card bg-dark shadow-sm">
+        <div class="card-body">
+          <%= render partial: "form", locals: {prompt: @prompt, languages: @supported_languages} %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<%= render partial: "prompts", locals: {prompt: @prompts} %>
+<%= render partial: "toast" %>

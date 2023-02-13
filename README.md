@@ -2,7 +2,7 @@
 
 ## Description
 
-Title: "Study Buddy - A Personal Study Assistant"
+Sguide: "Study Guide - A Personal AI-Assisted Study Assistant"
 
 Objective: To create a web application that uses the OpenAI API to provide students with a personal study assistant that can answer their questions and provide additional resources to help them study more effectively.
 
@@ -21,28 +21,56 @@ Personalized Feedback: The application will provide personalized feedback to stu
 ### Technologies Used:
 
 -   OpenAI API
--   Ruby on Rails 6 (for building the web application)
--   ERB HTML, CSS, and JavaScript (for front-end development)
+-   Ruby on Rails 6
+-   Ruby version 2.7
+-   ERB HTML, CSS, and JavaScript (front-end development)
+-   Database: Development:sqlite | Production:postgresql
+-   Docker
 
 ### How it Works:
 
-The student visits the "Study Buddy" website and logs in.
+The student visits the "Study Guide(Sguide)" website and logs in.
 The student asks a question or requests a resource.
 The web application sends the student's request to the OpenAI API for processing.
 The OpenAI API returns the answer or resource to the web application.
 The web application displays the answer or resource to the student.
 This web application provides students with a convenient and effective way to study and improve their grades. By leveraging the power of the OpenAI API, the application can provide personalized and accurate answers and resources in real-time, helping students achieve their academic goals.
 
-### Tech
+## Installation steps
 
--   Ruby version 2.7
+    - install [docker](https://docs.docker.com/engine/)
+    - install docker [compose plugin] (https://docs.docker.com/compose/install/linux/)
 
--   Database POSTGRSQL
+### Local
 
-# Installation steps
+```
+	npm install --global yarn (if necessary)
+	npm install
+	bundle install
+	rails webpacker:install (if necessary)
+```
 
 if you want to run in local environment
-npm install --global yarn
-rails webpacker:install
-docker build -t sguide .
-docker-compose up
+
+```
+	rails db:migrate
+	rails s
+```
+
+### Docker/Deployment
+
+```
+	docker build -t sguide .
+	docker-compose up
+	visit http://localhost:3000/
+```
+
+### Sample Screenshots
+
+-   ![Screenshot1.png](/documentation/screenshots/screenshot1.png)
+-   ![Screenshot2.png](/documentation/screenshots/screenshot2.png)
+-   ![sguide.png](/documentation/screenshots/sguide.gif)
+
+## Author
+
+[@maxahirwe](https://max.rw)

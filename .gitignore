@@ -4,11 +4,14 @@
 # or operating system, you probably want to add a global ignore instead:
 #   git config --global core.excludesfile '~/.gitignore_global'
 
+#/config/local_env.yml added to git for review purpose best practive is to not commit environment keys
+
 # Ignore bundler config.
 /.bundle
+/.idea
 
 # Ignore the default SQLite database.
-/db/*.sqlite3
+# /db/*.sqlite3 added to fasten testing, not recommended
 /db/*.sqlite3-journal
 
 # Ignore all logfiles and tempfiles.

@@ -1,0 +1,2 @@
+$("#prompt-responses").prepend("<%= escape_javascript render(partial: 'prompts/prompt', locals: { prompt: @prompt }) %>");
+$("#prompt-count").html("(<%= pcount %>)");
